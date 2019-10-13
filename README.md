@@ -5,27 +5,13 @@ Test Client Helper是一个针对测试客户端的测试框架辅助模块。�
 
 See README_en.md for English version.
 
-## Maven配置：
-```
-<!-- http://artifactory.jd.com/libs-snapshots-local/com/jdcloud/test-tool/test-client-helper/ -->
-<dependency>
-    <groupId>com.jdcloud.test-tool</groupId>
-    <artifactId>test-client-helper</artifactId>
-    <version>$version</version>
-</dependency>
-```
-
 ## 使用方法: 
 * 在测试代码中创建测试客户端包裹类，并继承TestClientHelper类。
 * 在测试客户端包裹类中实现请求调用的包裹方法，在其中利用executeAndAssert()或
 executeAndAssertWithResult()方法通过函数引用来调用客户端SDK的请求调用方法。与此
 同时，构造适当的Banner和SdkMethodOutputHandler对象来处理测试日志。
 * 在负向测试（negative test）中，通过在调用测试客户端的请求调用包裹方法前调用
-withExpectedError()来指定期望的错误或异常。
-
-## 例子：
-* TestClientHelper的子类请参考：http://git.jd.com/cloud-storage/oss-test/blob/master/jss_test/src/main/java/com/jcloud/clienthelper/S3ClientHelper.java
-* 相应的测试方法请参考：http://git.jd.com/cloud-storage/oss-test/tree/master/jss_test/src/main/java/com/jcloud/test/jss/mirrorstorage 
+withExpectedError()来指定期望的错误或异常。 
 
 ## TestCase类
 * TestCase类是本module提供的另外一个测试辅助类。这个类是一个对org.testng.Assert
